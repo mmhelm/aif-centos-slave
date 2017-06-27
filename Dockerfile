@@ -37,6 +37,26 @@ RUN \
 		perl-Sort-Versions \
 		perl-XML-Parser \
 		gcc-c++ \
+		maven \
+		time \
+		bc \
+		wget \
+	&& \
+	wget \
+		--no-check-certificate \
+		--no-cookies \
+		--header "Cookie: oraclelicense=accept-securebackup-cookie" \
+		http://download.oracle.com/otn-pub/java/jdk/jdk-8u131-linux-x64.rpm \
+	&& \
+	wget \
+		http://dl.fedoraproject.org/pub/epel/7/x86_64/x/xmlstarlet-1.6.1-1.el7.x86_64.rpm \
+	&& \
+	yum -y install \
+		jdk-8u131-linux-x64.rpm \
+		xmlstarlet-1.6.1-1.el7.x86_64.rpm \
+	&& \
+	yum -y remove \
+		wget \
 	&& \
 	yum clean all
 
