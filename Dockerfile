@@ -29,7 +29,6 @@ USER root
 # Install the additional packages which are need for build the project's software
 RUN \
 	yum -y install \
-		xorg-x11-server-Xvfb \
 		unzip \
 		tar \
 		git \
@@ -56,7 +55,12 @@ RUN \
 		jdk-8u131-linux-x64.rpm \
 		xmlstarlet-1.6.1-1.el7.x86_64.rpm \
 	&& \
+	rm -rf jdk-8u131-linux-x64.rpm \
+	&& \
+	rm -rf xmlstarlet-1.6.1-1.el7.x86_64.rpm \
+	&& \
 	yum -y remove \
+		jdk.x86_64 \
 		wget \
 	&& \
 	yum clean all
