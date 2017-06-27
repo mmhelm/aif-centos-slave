@@ -43,19 +43,16 @@ RUN \
 		wget \
 	&& \
 	wget \
-		--no-check-certificate \
-		--no-cookies \
-		--header "Cookie: oraclelicense=accept-securebackup-cookie" \
-		http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm \
+		http://app.nidc.kr/java/jdk-8u111-linux-x64.rpm \
 	&& \
 	wget \
 		http://dl.fedoraproject.org/pub/epel/7/x86_64/x/xmlstarlet-1.6.1-1.el7.x86_64.rpm \
 	&& \
 	yum -y install \
-		jdk-8u131-linux-x64.rpm \
+		jdk-8u111-linux-x64.rpm \
 		xmlstarlet-1.6.1-1.el7.x86_64.rpm \
 	&& \
-	rm -rf jdk-8u131-linux-x64.rpm \
+	rm -rf jdk-8u111-linux-x64.rpm \
 	&& \
 	rm -rf xmlstarlet-1.6.1-1.el7.x86_64.rpm \
 	&& \
