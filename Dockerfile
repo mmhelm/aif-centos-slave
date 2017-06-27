@@ -40,6 +40,7 @@ RUN \
 		maven \
 		time \
 		bc \
+		rpm-build \
 		wget \
 	&& \
 	wget \
