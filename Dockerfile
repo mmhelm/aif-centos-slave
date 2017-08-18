@@ -42,16 +42,10 @@ RUN \
 		wget \
 	&& \
 	wget \
-		http://app.nidc.kr/java/jdk-8u111-linux-x64.rpm \
-	&& \
-	wget \
 		http://dl.fedoraproject.org/pub/epel/7/x86_64/x/xmlstarlet-1.6.1-1.el7.x86_64.rpm \
 	&& \
 	yum -y install \
-		jdk-8u111-linux-x64.rpm \
 		xmlstarlet-1.6.1-1.el7.x86_64.rpm \
-	&& \
-	rm -rf jdk-8u111-linux-x64.rpm \
 	&& \
 	rm -rf xmlstarlet-1.6.1-1.el7.x86_64.rpm \
 	&& \
