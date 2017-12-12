@@ -37,6 +37,9 @@ RUN \
 		perl-Sort-Versions \
 		perl-XML-Parser \
 		gcc-c++ \
+		make \
+		boost \
+		boost-devel \
 	&& \
 	yum clean all
 
