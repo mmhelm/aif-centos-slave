@@ -40,6 +40,7 @@ RUN \
 		make \
 		boost \
 		boost-devel \
+		rpm-build \
 	&& \
 	yum clean all
 
