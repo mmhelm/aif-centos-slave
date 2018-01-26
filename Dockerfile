@@ -37,6 +37,7 @@ RUN \
 		perl-Sort-Versions \
 		perl-XML-Parser \
 		gcc-c++ \
+		xmlstarlet \
 	&& \
 	yum clean all
 
