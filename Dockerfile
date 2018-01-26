@@ -37,9 +37,22 @@ RUN \
 		perl-Sort-Versions \
 		perl-XML-Parser \
 		gcc-c++ \
-		xmlstarlet \
+		wget \
 	&& \
-	yum clean all
+		wget \
+		http://dl.fedoraproject.org/pub/epel/7/x86_64/x/xmlstarlet-1.6.1-1.el7.x86_64.rpm \
+	&& \
+	yum -y install \
+		xmlstarlet-1.6.1-1.el7.x86_64.rpm \
+	&& \
+	rm -rf xmlstarlet-1.6.1-1.el7.x86_64.rpm \
+	&& \
+	yum -y erase \
+		wget \
+	&& \
+	yum clean all \
+	&& \
+	rm -rf /var/cache/yum
 
 # Switch back to user `jenkins`
 USER jenkins
