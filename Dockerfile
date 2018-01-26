@@ -39,8 +39,8 @@ RUN \
 		gcc-c++ \
 		wget \
 	&& \
-		wget \
-		http://dl.fedoraproject.org/pub/epel/7/x86_64/x/xmlstarlet-1.6.1-1.el7.x86_64.rpm \
+	wget \
+		http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/x/xmlstarlet-1.6.1-1.el7.x86_64.rpm \
 	&& \
 	yum -y install \
 		xmlstarlet-1.6.1-1.el7.x86_64.rpm \
