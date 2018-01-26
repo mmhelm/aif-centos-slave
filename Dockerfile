@@ -50,9 +50,7 @@ RUN \
 	yum -y erase \
 		wget \
 	&& \
-	yum clean all \
-	&& \
-	rm -rf /var/cache/yum
+	yum clean all
 
 # Switch back to user `jenkins`
 USER jenkins
