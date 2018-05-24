@@ -42,6 +42,7 @@ RUN \
 		boost-devel \
 		rpm-build \
 		p7zip \
+		p7zip-plugins \
 	&& \
 	yum clean all
 
