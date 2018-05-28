@@ -26,6 +26,9 @@ MAINTAINER Markus Helm <markus.m.helm@live.de>
 # Switch to user `root` to install the packages
 USER root
 
+# Enable epel repository
+RUN yum -y install epel-release
+
 # Install the additional packages which are need for build the project's software
 RUN \
 	yum -y install \
