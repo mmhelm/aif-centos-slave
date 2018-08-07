@@ -26,6 +26,10 @@ MAINTAINER Markus Helm <markus.m.helm@live.de>
 # Switch to user `root` to install the packages
 USER root
 
+# Workaround for fixing a locale bug, see https://github.com/CentOS/sig-cloud-instance-images/issues/71
+RUN \
+	sudo sed -i 's/en_US\.UTF-8/en_US.utf8/' /etc/yum.conf
+
 # Install the additional packages which are need for build the project's software
 RUN \
 	yum -y install \
