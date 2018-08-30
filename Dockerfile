@@ -53,6 +53,10 @@ RUN \
 	&& \
 	yum -y erase \
 		wget \
+	&& yum -y install \
+	    device-mapper-persistent-data \
+		lvm2 \
+		docker \
 	&& \
 	yum clean all
 
