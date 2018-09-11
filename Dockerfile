@@ -44,7 +44,7 @@ RUN \
 		boost \
 		boost-devel \
 		rpm-build \
-		fuseiso \
+		xorriso \
 	&& \
 	yum clean all
 
