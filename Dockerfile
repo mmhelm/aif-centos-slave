@@ -44,8 +44,7 @@ RUN \
 		boost \
 		boost-devel \
 		rpm-build \
-		p7zip \
-		p7zip-plugins \
+		fuseiso \
 	&& \
 	yum clean all
 
