@@ -53,10 +53,16 @@ RUN \
 	&& \
 	yum -y erase \
 		wget \
-	&& yum -y install \
-	    device-mapper-persistent-data \
+	&& \
+	yum -y install \
+	  device-mapper-persistent-data \
 		lvm2 \
-		docker \
+	&& \	
+	yum-config-manager --add-repo \
+		https://yum.dockerproject.org/repo/main/centos/7 \
+	&& \
+	yum -y --nogpgcheck install \
+		docker-engine-1.12.6-1.el7.centos.x86_64 \
 	&& \
 	yum clean all
 
@@ -75,5 +81,17 @@ ENV LC_MEASUREMENT="en_US.UTF-8"
 ENV LC_IDENTIFICATION="en_US.UTF-8"
 ENV LC_ALL=
 
-# Switch back to user `jenkins`
-USER jenkins
+# Create dockersock group
+RUN groupadd -g 1000 dockersock
+# Add a dedicated docker system user
+RUN useradd --uid 1337 --gid 1000 --system --shell /bin/bash --create-home --home /home/docker docker
+# Add user docker to sudoers
+RUN echo "docker ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/docker
+
+# Switch to user `docker`
+USER docker
+
+# Prepare the workspace for user `docker`
+RUN mkdir -p /home/docker/.jenkins
+VOLUME /home/docker/.jenkins
+WORKDIR /home/docker
