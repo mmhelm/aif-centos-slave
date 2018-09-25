@@ -20,7 +20,7 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-FROM mhelm/docker-centos-slave:latest
+FROM mhelm/docker-centos-slave:v1
 MAINTAINER Markus Helm <markus.m.helm@live.de>
 
 # Switch to user `root` to install the packages
