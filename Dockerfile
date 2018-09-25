@@ -42,19 +42,12 @@ RUN \
 		wget \
 	&& \
 	wget \
-		http://dl.fedoraproject.org/pub/epel/7/x86_64/x/xmlstarlet-1.6.1-1.el7.x86_64.rpm \
+		http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/x/xmlstarlet-1.6.1-1.el7.x86_64.rpm \
 	&& \
 	yum -y install \
 		xmlstarlet-1.6.1-1.el7.x86_64.rpm \
 	&& \
 	rm -rf xmlstarlet-1.6.1-1.el7.x86_64.rpm \
-	&& \
-		wget \
-		https://archive.apache.org/dist/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz \
-	&& \
-	tar -xzf apache-maven-3.3.3-bin.tar.gz -C /opt \
-	&& \
-	rm -rf apache-maven-3.3.3-bin.tar.gz \
 	&& \
 	ln -s /opt/apache-maven-3.3.3/bin/mvn /usr/bin/mvn \
 	&& \
