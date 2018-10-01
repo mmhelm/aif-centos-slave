@@ -49,6 +49,13 @@ RUN \
 	&& \
 	rm -rf xmlstarlet-1.6.1-1.el7.x86_64.rpm \
 	&& \
+	wget \
+		https://archive.apache.org/dist/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz \
+	&& \
+	tar -xzf apache-maven-3.3.3-bin.tar.gz -C /opt \
+	&& \
+	rm -rf apache-maven-3.3.3-bin.tar.gz \
+	&& \
 	ln -s /opt/apache-maven-3.3.3/bin/mvn /usr/bin/mvn \
 	&& \
 	yum -y remove \
