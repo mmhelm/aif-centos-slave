@@ -30,6 +30,8 @@ USER root
 RUN \
 	sudo sed -i 's/en_US\.UTF-8/en_US.utf8/' /etc/yum.conf
 
+RUN yum -y install epel-release
+
 # Install the additional packages which are need for build the project's software
 RUN \
 	yum -y install \
@@ -43,7 +45,7 @@ RUN \
 		gcc-c++ \
 		wget \
 		p7zip \
-		p7zip-plugins \
+        p7zip-plugins \
 	&& \
 	wget \
 		http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/x/xmlstarlet-1.6.1-1.el7.x86_64.rpm \
