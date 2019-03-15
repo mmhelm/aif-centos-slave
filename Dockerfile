@@ -42,6 +42,8 @@ RUN \
 		perl-XML-Parser \
 		gcc-c++ \
 		wget \
+		p7zip \
+		p7zip-plugins \
 	&& \
 	wget \
 		http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/x/xmlstarlet-1.6.1-1.el7.x86_64.rpm \
