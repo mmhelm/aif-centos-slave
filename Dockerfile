@@ -20,11 +20,8 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-FROM mhelm/docker-centos-slave:v2
+FROM centos:7.3.1611
 MAINTAINER Markus Helm <markus.m.helm@live.de>
-
-# Switch to user `root` to install the packages
-USER root
 
 # Workaround for fixing a locale bug, see https://github.com/CentOS/sig-cloud-instance-images/issues/71
 RUN \
@@ -70,6 +67,3 @@ ENV LC_TELEPHONE="en_US.UTF-8"
 ENV LC_MEASUREMENT="en_US.UTF-8"
 ENV LC_IDENTIFICATION="en_US.UTF-8"
 ENV LC_ALL=
-
-# Switch back to user `jenkins`
-USER jenkins
