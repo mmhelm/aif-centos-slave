@@ -37,7 +37,7 @@ RUN \
 		unzip \
 		tar \
 		git \
-		buildah \
+		buildah fuse-overlayfs --exclude container-selinux; rm -rf /var/cache /var/log/dnf* /var/log/yum.* \
 		perl-Data-Dumper \
 		perl-Sort-Versions \
 		perl-XML-Parser \
