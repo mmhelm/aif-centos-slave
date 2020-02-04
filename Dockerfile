@@ -37,6 +37,7 @@ RUN \
 		unzip \
 		tar \
 		git \
+		buildah \
 		perl-Data-Dumper \
 		perl-Sort-Versions \
 		perl-XML-Parser \
