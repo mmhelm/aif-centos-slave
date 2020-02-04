@@ -37,7 +37,7 @@ RUN \
 		unzip \
 		tar \
 		git \
-		buildah fuse-overlayfs --exclude container-selinux; rm -rf /var/cache /var/log/dnf* /var/log/yum.* \
+		buildah fuse-overlayfs --exclude container-selinux \
 		perl-Data-Dumper \
 		perl-Sort-Versions \
 		perl-XML-Parser \
@@ -55,7 +55,9 @@ RUN \
 	yum -y erase \
 		wget \
 	&& \
-	yum clean all
+	yum clean all \
+	&& \
+	rm -rf /var/cache /var/log/dnf* /var/log/yum.*
 
 ENV LANG="en_US.UTF-8"
 ENV LC_CTYPE="en_US.UTF-8"
